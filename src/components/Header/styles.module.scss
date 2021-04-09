@@ -1,0 +1,62 @@
+.headerContainer {
+    height: 5rem;
+    border-bottom: 1px solid var(--gray-800) ;
+
+}
+
+.headerContent {
+    max-width: 1120px;
+    height: 5rem;
+    //alinha o centro horizontalmente
+    margin: 0 auto;
+    //se diminuir a tela pra menos de 1120px fica espaçamento nas laterais
+    padding: 0 2rem;
+
+    //alinhando ao centro
+    display: flex;
+    align-items: center;
+
+nav {
+    margin-left: 5rem;
+    //para ocupar o menu todo 5rem de height e poder usar a borda amarela
+    height: 5rem;
+
+    a {
+        //Espaçamento a partir do segundo link
+        & + a{
+            margin-left: 2rem;
+        }
+
+        display: inline-block;
+        position: relative;
+        padding:  0 0.5rem;
+        height: 5rem;
+        line-height: 5rem;
+        color: var(--gray-300);
+
+        transition: color 0.2s;
+
+        &:hover {
+            color: var(--white);
+        }
+
+        &.active{
+            color: var(--white);
+            font-weight: bold;
+        }
+        //Traço amarelo quando ativo
+        &.active::after {
+            content: '';
+            height: 3px;
+            border-radius: 3px 3px 0 0;
+            width: 100%;
+            position: absolute;
+            bottom: 1px;
+            left: 0;
+            background: var(--yellow-500);
+        }
+
+    }
+
+}
+}
